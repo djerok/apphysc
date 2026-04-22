@@ -46,6 +46,21 @@
     fig.innerHTML = svg + '<figcaption>' + caption + '</figcaption>';
   });
 
+  /* ============ Inject per-topic lessons ============ */
+  // A "Lessons" section goes right after the unit-header, before Learning Objectives.
+  if (window.LESSONS) {
+    Object.keys(window.LESSONS).forEach((unitId) => {
+      const unit = document.getElementById(unitId);
+      if (!unit) return;
+      const header = unit.querySelector('.unit-header');
+      if (!header) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'lessons-block';
+      wrap.innerHTML = '<h3>Lessons — taught step by step</h3><p class="lesson-intro">Every topic in this unit explained like a class lecture, with a live-walkthrough derivation and per-step teacher commentary.</p>' + window.LESSONS[unitId];
+      header.insertAdjacentElement('afterend', wrap);
+    });
+  }
+
   /* ============ Inject per-unit derivations ============ */
   // Adds a "Derivations" section between Key Equations and Diagram in each unit.
   if (window.DERIVATIONS) {
