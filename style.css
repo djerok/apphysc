@@ -637,26 +637,14 @@ body {
 
 /* ================= Equation blocks ================= */
 .eq-block {
-  padding: 24px 28px;
+  padding: 28px 28px 24px;
   background: var(--bg-card);
   border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   overflow-x: auto;
   position: relative;
   box-shadow: var(--shadow-sm);
-}
-.eq-block::before {
-  content: 'equations';
-  position: absolute;
-  top: -8px;
-  left: 20px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  background: var(--bg);
-  padding: 0 8px;
 }
 .eq-block > * { margin: 0.5em 0; }
 
@@ -743,17 +731,62 @@ figure {
   transition: border 0.25s;
 }
 figure:hover { border-color: var(--rule); }
-figure img {
+figure img, figure svg.diagram {
   max-width: 100%;
-  max-height: 340px;
+  max-height: 360px;
   height: auto;
-  background: white;
-  padding: 12px;
+  display: block;
+  margin: 0 auto;
   border-radius: 6px;
-  filter: contrast(1.02);
   transition: transform 0.4s var(--ease);
 }
-figure:hover img { transform: scale(1.01); }
+figure img {
+  background: white;
+  padding: 12px;
+  filter: contrast(1.02);
+}
+figure svg.diagram {
+  background: transparent;
+}
+figure:hover img, figure:hover svg.diagram { transform: scale(1.015); }
+
+/* SVG diagram tokens - inherit theme colors */
+svg.diagram {
+  --d-ink: var(--ink);
+  --d-paper: var(--bg-card);
+  --d-accent: var(--accent);
+  --d-ochre: var(--ochre);
+  --d-teal: var(--teal);
+  --d-dim: var(--text-dim);
+  --d-faint: var(--text-faint);
+  --d-rule: var(--rule);
+}
+svg.diagram .stroke-ink { stroke: var(--d-ink); }
+svg.diagram .stroke-accent { stroke: var(--d-accent); }
+svg.diagram .stroke-ochre { stroke: var(--d-ochre); }
+svg.diagram .stroke-teal { stroke: var(--d-teal); }
+svg.diagram .stroke-dim { stroke: var(--d-dim); }
+svg.diagram .stroke-faint { stroke: var(--d-faint); }
+svg.diagram .fill-ink { fill: var(--d-ink); }
+svg.diagram .fill-accent { fill: var(--d-accent); }
+svg.diagram .fill-ochre { fill: var(--d-ochre); }
+svg.diagram .fill-teal { fill: var(--d-teal); }
+svg.diagram .fill-paper { fill: var(--d-paper); }
+svg.diagram .fill-none { fill: none; }
+svg.diagram text {
+  font-family: var(--body);
+  font-style: italic;
+  font-size: 13px;
+  fill: var(--d-dim);
+}
+svg.diagram text.label {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  fill: var(--d-faint);
+  text-transform: uppercase;
+}
 figcaption {
   margin-top: 16px;
   font-family: var(--body);
@@ -846,6 +879,29 @@ figcaption::before {
 }
 .soln li { margin-bottom: 8px; }
 .soln strong { color: var(--accent); font-weight: 600; }
+
+.example p.takeaway {
+  margin-top: 14px !important;
+  padding: 12px 16px 12px 44px !important;
+  background: var(--bg-sunk);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 14.5px;
+  color: var(--text-dim);
+  position: relative;
+}
+.example p.takeaway::before {
+  content: '◆';
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  color: var(--teal);
+  font-size: 11px;
+}
+.example p.takeaway strong { color: var(--teal); font-weight: 600; letter-spacing: 0.3px; }
+
+.example p:has(> strong:first-child:only-child) + ol.soln,
+.example p > strong { color: var(--ink); }
 
 /* ================= Reference table ================= */
 .ref-table {
