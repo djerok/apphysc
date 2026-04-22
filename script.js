@@ -1,27 +1,88 @@
-// AP Physics C study site — navigation, search, UI polish
+// The Physicist's Notebook — interactive logic
+// Theme toggle, scroll progress, intersection-observer reveals,
+// scroll-spy navigation, debounced search with highlight,
+// mobile drawer, keyboard shortcuts.
 
 (function () {
-  const searchInput = document.getElementById('search');
-  const units = Array.from(document.querySelectorAll('.unit'));
-  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
-  const noResults = document.getElementById('noresults');
-  const toTop = document.getElementById('toTop');
+  'use strict';
 
-  // Keyboard shortcut: "/" focuses search
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+  const searchInput = $('#search');
+  const units = $$('.unit');
+  const navLinks = $$('.nav-link');
+  const noResults = $('#noresults');
+  const toTop = $('#toTop');
+  const themeToggle = $('#themeToggle');
+  const menuBtn = $('#menuBtn');
+  const sidebar = $('.sidebar');
+  const backdrop = $('#sidebarBackdrop');
+  const progressFill = $('#progressFill');
+  const body = document.body;
+
+  /* ============ Theme ============ */
+  const THEME_KEY = 'apc-theme';
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === 'ink' || savedTheme === 'paper') {
+    body.dataset.theme = savedTheme;
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    body.dataset.theme = 'ink';
+  }
+
+  function toggleTheme() {
+    const next = body.dataset.theme === 'ink' ? 'paper' : 'ink';
+    body.dataset.theme = next;
+    localStorage.setItem(THEME_KEY, next);
+  }
+  themeToggle && themeToggle.addEventListener('click', toggleTheme);
+
+  /* ============ Mobile menu ============ */
+  function openMenu() {
+    sidebar.classList.add('open');
+    menuBtn.classList.add('open');
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add('visible'));
+    body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    sidebar.classList.remove('open');
+    menuBtn.classList.remove('open');
+    backdrop.classList.remove('visible');
+    setTimeout(() => { backdrop.hidden = true; }, 300);
+    body.style.overflow = '';
+  }
+  menuBtn && menuBtn.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  backdrop && backdrop.addEventListener('click', closeMenu);
+  navLinks.forEach((l) =>
+    l.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) closeMenu();
+    })
+  );
+
+  /* ============ Keyboard shortcuts ============ */
   document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== searchInput) {
+    const typing = ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName);
+    if (e.key === '/' && !typing) {
       e.preventDefault();
       searchInput.focus();
       searchInput.select();
-    }
-    if (e.key === 'Escape' && document.activeElement === searchInput) {
-      searchInput.value = '';
-      applySearch('');
-      searchInput.blur();
+    } else if (e.key === 'Escape') {
+      if (document.activeElement === searchInput) {
+        searchInput.value = '';
+        applySearch('');
+        searchInput.blur();
+      } else if (sidebar.classList.contains('open')) {
+        closeMenu();
+      }
+    } else if ((e.key === 't' || e.key === 'T') && !typing && !e.metaKey && !e.ctrlKey) {
+      toggleTheme();
     }
   });
 
-  // Search: filter sections; highlight matches in text nodes
+  /* ============ Search: debounced filter + highlight ============ */
   function clearHighlights(root) {
     root.querySelectorAll('.hl').forEach((el) => {
       const parent = el.parentNode;
@@ -30,12 +91,13 @@
     });
   }
 
+  function escapeRegex(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   function highlight(root, term) {
     if (!term) return;
-    const regex = new RegExp(
-      '(' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')',
-      'gi'
-    );
+    const regex = new RegExp('(' + escapeRegex(term) + ')', 'gi');
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         const p = node.parentNode;
@@ -48,7 +110,8 @@
           p.closest('mjx-container') ||
           p.closest('figure') ||
           p.closest('.eq-block') ||
-          p.closest('.eq-card')
+          p.closest('.eq-card') ||
+          p.closest('code')
         )
           return NodeFilter.FILTER_REJECT;
         return regex.test(node.nodeValue)
@@ -79,7 +142,6 @@
 
   function applySearch(raw) {
     const term = raw.trim();
-    // Clear all previous highlights first
     units.forEach((u) => clearHighlights(u));
 
     if (!term) {
@@ -91,8 +153,8 @@
     const lower = term.toLowerCase();
     let anyVisible = false;
     units.forEach((u) => {
-      const text = (u.dataset.title + ' ' + u.textContent).toLowerCase();
-      if (text.includes(lower)) {
+      const hay = ((u.dataset.title || '') + ' ' + u.textContent).toLowerCase();
+      if (hay.includes(lower)) {
         u.classList.remove('hidden');
         highlight(u, term);
         anyVisible = true;
@@ -109,56 +171,67 @@
     searchTimer = setTimeout(() => applySearch(e.target.value), 120);
   });
 
-  // Active-nav highlight based on scroll position
-  const navByHref = Object.fromEntries(
+  /* ============ Scroll-spy sidebar ============ */
+  const linkByHref = Object.fromEntries(
     navLinks.map((l) => [l.getAttribute('href'), l])
   );
-  const sectionIds = units.map((u) => u.id).filter(Boolean);
 
-  function updateActive() {
-    const scrollPos = window.scrollY + 120;
-    let currentId = sectionIds[0];
-    for (const id of sectionIds) {
-      const el = document.getElementById(id);
-      if (!el) continue;
-      if (el.offsetTop <= scrollPos) currentId = id;
+  const spyObserver = new IntersectionObserver(
+    (entries) => {
+      // Find the entry with the smallest positive top (most recently crossed into view)
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+      if (!visible.length) return;
+      const id = visible[0].target.id;
+      if (!id) return;
+      navLinks.forEach((l) => l.classList.remove('active'));
+      const active = linkByHref['#' + id];
+      if (active) active.classList.add('active');
+    },
+    { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+  );
+  units.forEach((u) => u.id && spyObserver.observe(u));
+
+  /* ============ Scroll-triggered fade-up reveal ============ */
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: '0px 0px -80px 0px', threshold: 0.04 }
+  );
+  units.forEach((u) => revealObserver.observe(u));
+
+  /* ============ Scroll progress + back-to-top ============ */
+  function updateScrollUI() {
+    const scroll = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = height > 0 ? (scroll / height) * 100 : 0;
+    if (progressFill) progressFill.style.width = pct + '%';
+    if (toTop) {
+      if (scroll > 600) toTop.classList.add('visible');
+      else toTop.classList.remove('visible');
     }
-    navLinks.forEach((l) => l.classList.remove('active'));
-    const active = navByHref['#' + currentId];
-    if (active) active.classList.add('active');
   }
-
-  // Back-to-top button visibility
-  function updateToTop() {
-    if (window.scrollY > 600) toTop.classList.add('visible');
-    else toTop.classList.remove('visible');
-  }
-
   let raf = null;
   window.addEventListener(
     'scroll',
     () => {
       if (raf) return;
       raf = requestAnimationFrame(() => {
-        updateActive();
-        updateToTop();
+        updateScrollUI();
         raf = null;
       });
     },
     { passive: true }
   );
-
-  toTop.addEventListener('click', () =>
+  toTop && toTop.addEventListener('click', () =>
     window.scrollTo({ top: 0, behavior: 'smooth' })
   );
-
-  // Smooth scroll for nav clicks (CSS handles it, but close the mobile keyboard)
-  navLinks.forEach((l) =>
-    l.addEventListener('click', () => {
-      if (document.activeElement === searchInput) searchInput.blur();
-    })
-  );
-
-  updateActive();
-  updateToTop();
+  updateScrollUI();
 })();

@@ -7,33 +7,49 @@
 <meta name="description" content="Full AP Physics C study guide (Mechanics + E&M) aligned to CollegeBoard CED. Worked FRQ examples, diagrams, equations, and search." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <script>
   MathJax = {
     tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
-    svg: { fontCache: 'global' }
+    svg: { fontCache: 'global' },
+    startup: {
+      ready() {
+        MathJax.startup.defaultReady();
+        MathJax.startup.promise.then(() => document.body.classList.add('mathjax-ready'));
+      }
+    }
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-theme="paper">
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="grain"></div>
 
 <header class="site-header">
-  <div class="brand">
-    <div class="brand-mark">APC</div>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="#top" class="brand">
+    <div class="brand-mark"><span class="mark-glyph">ƒ</span></div>
     <div>
-      <h1>AP Physics C</h1>
-      <div class="subtitle">Complete Study Guide · Mechanics + E&amp;M</div>
+      <h1>The Physicist's Notebook</h1>
+      <div class="subtitle">AP Physics C · Mechanics &amp; E&amp;M · May 2026</div>
     </div>
-  </div>
+  </a>
   <div class="search-wrap">
     <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    <input id="search" type="search" placeholder="Search topics, equations, examples…" autocomplete="off" />
+    <input id="search" type="search" placeholder="Search equations, topics, examples…" autocomplete="off" spellcheck="false" />
     <kbd class="kbd">/</kbd>
   </div>
   <nav class="top-actions">
-    <a href="https://github.com/djerok/apphysc" target="_blank" rel="noopener" class="ghost">GitHub</a>
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme (T)">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <a href="https://github.com/djerok/apphysc" target="_blank" rel="noopener" class="ghost">GitHub ↗</a>
   </nav>
 </header>
 
@@ -68,10 +84,10 @@
 
 <main class="content">
 
-<section class="hero">
-  <div class="hero-tag">Aligned to CollegeBoard CED · May 2026 exam</div>
-  <h2>Everything you need for the AP Physics C exam.</h2>
-  <p class="lede">A comprehensive, exam-aligned guide for both <strong>Mechanics</strong> and <strong>Electricity &amp; Magnetism</strong>. Thirteen units, hundreds of equations, worked FRQ-style problems, diagrams, and exam pitfalls — all searchable.</p>
+<section class="hero" id="top">
+  <div class="hero-tag">Aligned to CollegeBoard CED · May 2026</div>
+  <h2>Everything for AP Physics C, <em>rigorously</em>.</h2>
+  <p class="lede">A complete, exam-aligned companion for both <strong>Mechanics</strong> and <strong>Electricity &amp; Magnetism</strong>. Thirteen units of calculus-based physics — worked FRQs, rendered equations, diagrams, and every pitfall examiners love to set.</p>
   <div class="hero-stats">
     <div><strong>13</strong><span>Units</span></div>
     <div><strong>39+</strong><span>Worked FRQs</span></div>
@@ -951,6 +967,7 @@ $$I_{growth}(t)=\frac{\varepsilon}{R}(1-e^{-t/\tau}),\ \tau=L/R,\ \omega_{LC}=\f
 </main>
 
 <button id="toTop" title="Back to top" aria-label="Back to top">↑</button>
+<div id="sidebarBackdrop" class="sidebar-backdrop" hidden></div>
 </div>
 
 <div id="noresults" class="no-results" hidden>No matches found. Try a different search term.</div>
