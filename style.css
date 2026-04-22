@@ -900,6 +900,113 @@ figcaption::before {
 }
 .example p.takeaway strong { color: var(--teal); font-weight: 600; letter-spacing: 0.3px; }
 
+.ex-figure {
+  margin: 6px 24px 14px;
+  padding: 10px 12px;
+  background: var(--bg-sunk);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+.ex-figure svg.diagram {
+  max-width: 100%;
+  max-height: 200px;
+  height: auto;
+}
+
+/* Derivation block */
+.derivation {
+  margin: 14px 0;
+  padding: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--teal);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border 0.25s var(--ease);
+}
+.derivation:hover { border-color: var(--rule); border-left-color: var(--teal); }
+.derivation[open] { background: var(--bg-elev); }
+.derivation > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 22px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 17px;
+  font-variation-settings: "opsz" 24;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+.derivation > summary::-webkit-details-marker { display: none; }
+.derivation > summary::after {
+  content: '+';
+  margin-left: auto;
+  color: var(--text-faint);
+  transition: transform 0.3s var(--ease);
+  font-family: var(--mono);
+  font-size: 20px;
+}
+.derivation[open] > summary::after { transform: rotate(45deg); color: var(--teal); }
+.derivation > summary::before {
+  content: '∂';
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--teal);
+  font-size: 22px;
+}
+.derivation > *:not(summary) { padding: 0 22px 18px; }
+.derivation p { margin-top: 0; color: var(--text-dim); font-size: 15.5px; line-height: 1.65; }
+.derivation .step {
+  padding: 14px 16px 14px 56px;
+  margin: 10px 0;
+  background: var(--bg-sunk);
+  border-radius: var(--radius-sm);
+  position: relative;
+  border-left: 2px solid var(--teal);
+}
+.derivation .step::before {
+  counter-increment: deriv-step;
+  content: counter(deriv-step);
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: var(--teal);
+  color: white;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 50%;
+}
+.derivation { counter-reset: deriv-step; }
+.derivation .step p { margin: 4px 0; color: var(--text); }
+.derivation .step .why {
+  color: var(--text-dim);
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  margin-top: 6px;
+  padding-left: 0;
+}
+.derivation-pill {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 14%, transparent);
+  padding: 4px 9px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
 .example p:has(> strong:first-child:only-child) + ol.soln,
 .example p > strong { color: var(--ink); }
 

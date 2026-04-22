@@ -71,6 +71,25 @@
         examplesHeader.parentNode.insertBefore(child, node);
       });
     });
+    // Inject a diagram before the Problem paragraph in each example
+    if (window.EX_DIAGRAM_MAP && window.EX_SVG_LIB) {
+      Object.keys(window.EX_DIAGRAM_MAP).forEach((unitId) => {
+        const unit = document.getElementById(unitId);
+        if (!unit) return;
+        const details = Array.from(unit.querySelectorAll('details.example'));
+        const keys = window.EX_DIAGRAM_MAP[unitId] || [];
+        details.forEach((det, i) => {
+          const key = keys[i];
+          if (!key || !window.EX_SVG_LIB[key]) return;
+          const summary = det.querySelector('summary');
+          if (!summary) return;
+          const fig = document.createElement('div');
+          fig.className = 'ex-figure';
+          fig.innerHTML = window.EX_SVG_LIB[key];
+          summary.insertAdjacentElement('afterend', fig);
+        });
+      });
+    }
     // Tell MathJax to typeset the new content
     if (window.MathJax && window.MathJax.typesetPromise) {
       window.MathJax.typesetPromise().catch(() => {});
