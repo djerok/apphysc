@@ -46,6 +46,22 @@
     fig.innerHTML = svg + '<figcaption>' + caption + '</figcaption>';
   });
 
+  /* ============ Inject per-unit derivations ============ */
+  // Adds a "Derivations" section between Key Equations and Diagram in each unit.
+  if (window.DERIVATIONS) {
+    Object.keys(window.DERIVATIONS).forEach((unitId) => {
+      const unit = document.getElementById(unitId);
+      if (!unit) return;
+      const h3s = Array.from(unit.querySelectorAll('h3'));
+      const diagramHeader = h3s.find((h) => /^diagram/i.test(h.textContent.trim()));
+      if (!diagramHeader) return;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'derivations-block';
+      wrapper.innerHTML = '<h3>Derivations</h3><p class="deriv-intro">Every key formula in this unit, derived from first principles with each step\'s reasoning explained.</p>' + window.DERIVATIONS[unitId];
+      diagramHeader.parentNode.insertBefore(wrapper, diagramHeader);
+    });
+  }
+
   /* ============ Inject expanded examples ============ */
   // Replace the original "Worked Examples" block in each unit with the
   // comprehensive archetype-by-archetype examples from examples.js.
