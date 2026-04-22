@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AP Physics C — Complete Study Guide</title>
+<meta name="description" content="Full AP Physics C study guide (Mechanics + E&M) aligned to CollegeBoard CED. Worked FRQ examples, diagrams, equations, and search." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="brand-mark">APC</div>
+    <div>
+      <h1>AP Physics C</h1>
+      <div class="subtitle">Complete Study Guide · Mechanics + E&amp;M</div>
+    </div>
+  </div>
+  <div class="search-wrap">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="search" type="search" placeholder="Search topics, equations, examples…" autocomplete="off" />
+    <kbd class="kbd">/</kbd>
+  </div>
+  <nav class="top-actions">
+    <a href="https://github.com/djerok/apphysc" target="_blank" rel="noopener" class="ghost">GitHub</a>
+  </nav>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <div class="side-section">
+    <div class="side-label">Mechanics</div>
+    <a href="#unit-1" class="nav-link"><span class="num">1</span> Kinematics</a>
+    <a href="#unit-2" class="nav-link"><span class="num">2</span> Force &amp; Dynamics</a>
+    <a href="#unit-3" class="nav-link"><span class="num">3</span> Work, Energy, Power</a>
+    <a href="#unit-4" class="nav-link"><span class="num">4</span> Linear Momentum</a>
+    <a href="#unit-5" class="nav-link"><span class="num">5</span> Torque &amp; Rotation</a>
+    <a href="#unit-6" class="nav-link"><span class="num">6</span> Rotational E &amp; L</a>
+    <a href="#unit-7" class="nav-link"><span class="num">7</span> Oscillations</a>
+  </div>
+  <div class="side-section">
+    <div class="side-label">Electricity &amp; Magnetism</div>
+    <a href="#unit-8" class="nav-link"><span class="num">8</span> Charges, Fields, Gauss</a>
+    <a href="#unit-9" class="nav-link"><span class="num">9</span> Electric Potential</a>
+    <a href="#unit-10" class="nav-link"><span class="num">10</span> Conductors &amp; Capacitors</a>
+    <a href="#unit-11" class="nav-link"><span class="num">11</span> Circuits</a>
+    <a href="#unit-12" class="nav-link"><span class="num">12</span> Magnetic Fields</a>
+    <a href="#unit-13" class="nav-link"><span class="num">13</span> EM Induction</a>
+  </div>
+  <div class="side-section">
+    <div class="side-label">Reference</div>
+    <a href="#equation-sheet" class="nav-link">Equation Sheet</a>
+    <a href="#study-tips" class="nav-link">Study Tips</a>
+  </div>
+</aside>
+
+<main class="content">
+
+<section class="hero">
+  <div class="hero-tag">Aligned to CollegeBoard CED · May 2026 exam</div>
+  <h2>Everything you need for the AP Physics C exam.</h2>
+  <p class="lede">A comprehensive, exam-aligned guide for both <strong>Mechanics</strong> and <strong>Electricity &amp; Magnetism</strong>. Thirteen units, hundreds of equations, worked FRQ-style problems, diagrams, and exam pitfalls — all searchable.</p>
+  <div class="hero-stats">
+    <div><strong>13</strong><span>Units</span></div>
+    <div><strong>39+</strong><span>Worked FRQs</span></div>
+    <div><strong>60+</strong><span>Key Equations</span></div>
+    <div><strong>2026</strong><span>Exam Ready</span></div>
+  </div>
+</section>
+
+<!-- EQUATION SHEET -->
+<section class="unit" id="equation-sheet" data-title="Equation Sheet">
+<div class="unit-header">
+  <div class="unit-tag">Reference</div>
+  <h2>Quick Equation Sheet</h2>
+  <p>A condensed list of every key equation across all 13 units. Scroll or search.</p>
+</div>
+<div class="cards">
+  <div class="eq-card"><h4>Kinematics</h4>
+  $$v=\tfrac{dx}{dt},\quad a=\tfrac{dv}{dt}=\tfrac{d^2x}{dt^2}$$
+  $$v=v_0+at,\ x=x_0+v_0t+\tfrac12 at^2,\ v^2=v_0^2+2a\Delta x$$
+  </div>
+  <div class="eq-card"><h4>Newton's Laws</h4>
+  $$\sum \vec F = m\vec a = \tfrac{d\vec p}{dt}$$
+  $$f_s\le\mu_s N,\ f_k=\mu_k N$$
+  </div>
+  <div class="eq-card"><h4>Work / Energy / Power</h4>
+  $$W=\int\vec F\cdot d\vec r,\ K=\tfrac12 mv^2$$
+  $$F_x=-\tfrac{dU}{dx},\ P=\vec F\cdot\vec v$$
+  </div>
+  <div class="eq-card"><h4>Momentum</h4>
+  $$\vec p = m\vec v,\ \vec J=\int\vec F\,dt=\Delta\vec p$$
+  $$\vec r_{cm}=\frac{1}{M}\int\vec r\,dm$$
+  </div>
+  <div class="eq-card"><h4>Rotation</h4>
+  $$\vec\tau=\vec r\times\vec F,\ \sum\vec\tau=I\vec\alpha$$
+  $$I=\int r^2 dm,\ I=I_{cm}+Md^2$$
+  </div>
+  <div class="eq-card"><h4>Rotational Energy / Angular Momentum</h4>
+  $$K_{rot}=\tfrac12 I\omega^2,\ L=I\omega=\vec r\times\vec p$$
+  $$\tau_{ext}=\tfrac{dL}{dt}$$
+  </div>
+  <div class="eq-card"><h4>Gravitation / Orbits</h4>
+  $$F=\tfrac{GMm}{r^2},\ U=-\tfrac{GMm}{r}$$
+  $$E_{orbit}=-\tfrac{GMm}{2a},\ T^2=\tfrac{4\pi^2 a^3}{GM}$$
+  </div>
+  <div class="eq-card"><h4>SHM</h4>
+  $$\tfrac{d^2x}{dt^2}=-\omega^2 x,\ \omega=\sqrt{k/m}$$
+  $$T_{phys}=2\pi\sqrt{I/mgd},\ E=\tfrac12 kA^2$$
+  </div>
+  <div class="eq-card"><h4>Coulomb &amp; Gauss</h4>
+  $$\vec E=\tfrac{kq}{r^2}\hat r,\ \oint\vec E\cdot d\vec A=\tfrac{Q_{enc}}{\varepsilon_0}$$
+  </div>
+  <div class="eq-card"><h4>Potential</h4>
+  $$V=\tfrac{kq}{r},\ V_B-V_A=-\int_A^B\vec E\cdot d\vec l$$
+  $$\vec E=-\nabla V,\ U=qV$$
+  </div>
+  <div class="eq-card"><h4>Capacitance</h4>
+  $$C=Q/V,\ C_{pp}=\tfrac{\varepsilon_0 A}{d}$$
+  $$U=\tfrac12 CV^2,\ u=\tfrac12\varepsilon_0 E^2$$
+  </div>
+  <div class="eq-card"><h4>Circuits / RC</h4>
+  $$V=IR,\ P=I^2 R$$
+  $$q(t)=Q_f(1-e^{-t/RC}),\ \tau=RC$$
+  </div>
+  <div class="eq-card"><h4>Magnetism</h4>
+  $$\vec F=q\vec v\times\vec B,\ r=\tfrac{mv}{qB}$$
+  $$d\vec B=\tfrac{\mu_0}{4\pi}\tfrac{I\,d\vec l\times\hat r}{r^2},\ \oint\vec B\cdot d\vec l=\mu_0 I_{enc}$$
+  </div>
+  <div class="eq-card"><h4>Induction / LR / LC</h4>
+  $$\varepsilon=-\tfrac{d\Phi_B}{dt}=-L\tfrac{dI}{dt}$$
+  $$U=\tfrac12 LI^2,\ \tau=L/R,\ \omega_{LC}=\tfrac{1}{\sqrt{LC}}$$
+  </div>
+</div>
+<div class="constants">
+  <strong>Constants:</strong> $g=9.8\,\mathrm{m/s^2}$, $k=8.99\times 10^9\,\mathrm{N\cdot m^2/C^2}$, $\varepsilon_0=8.85\times 10^{-12}\,\mathrm{C^2/(N\cdot m^2)}$, $\mu_0=4\pi\times 10^{-7}\,\mathrm{T\cdot m/A}$, $e=1.6\times 10^{-19}\,\mathrm C$, $G=6.67\times 10^{-11}\,\mathrm{N\cdot m^2/kg^2}$.
+</div>
+</section>
+
+<!-- UNIT 1 -->
+<section class="unit" id="unit-1" data-title="Kinematics">
+<div class="unit-header"><div class="unit-tag">Mechanics · Unit 1</div><h2>Kinematics</h2>
+<p>Describe motion in 1D and 2D using calculus. Position, velocity, and acceleration are related by derivatives and integrals; constant-acceleration kinematics are a special case.</p>
+</div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+  <li>Describe motion in 1D/2D with position, displacement, velocity, acceleration.</li>
+  <li>Derive $v$ and $a$ from $x(t)$ by differentiation; derive $v$ and $x$ from $a(t)$ by integration.</li>
+  <li>Apply constant-acceleration kinematic equations.</li>
+  <li>Analyze projectile motion by decomposing into independent $x$ and $y$ components.</li>
+  <li>Interpret $x$–$t$, $v$–$t$, $a$–$t$ graphs (slopes = derivatives, areas = integrals).</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$v(t)=\frac{dx}{dt},\quad a(t)=\frac{dv}{dt},\quad x(t)=x_0+\int_0^t v(t')\,dt'$$
+$$v=v_0+at,\quad x=x_0+v_0 t+\tfrac12 at^2,\quad v^2=v_0^2+2a(x-x_0)$$
+$$\text{Projectile: }v_{0x}=v_0\cos\theta,\ v_{0y}=v_0\sin\theta,\ a_y=-g$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ferde_hajitas4.svg/640px-Ferde_hajitas4.svg.png" alt="Projectile trajectory" /><figcaption>Projectile motion: horizontal velocity constant, vertical velocity decreases then reverses.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Non-constant acceleration (calculus)</summary>
+<p><strong>Problem.</strong> A particle moves along the $x$-axis with $a(t)=(6t-4)\,\mathrm{m/s^2}$. At $t=0$, $x_0=2\,\mathrm m$ and $v_0=3\,\mathrm{m/s}$. Find $v(t)$, $x(t)$, and whether $v=0$ ever occurs.</p>
+<ol class="soln">
+<li>$v(t)=3+\int_0^t(6t'-4)dt'=3t^2-4t+3\,\mathrm{m/s}$</li>
+<li>$x(t)=2+\int_0^t v\,dt'=t^3-2t^2+3t+2\,\mathrm m$</li>
+<li>Set $v=0$: discriminant $=16-36=-20&lt;0$ → <strong>$v$ is never zero</strong>.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> 2D projectile from a cliff</summary>
+<p><strong>Problem.</strong> Ball launched from edge of a 20 m cliff at $v_0=25\,\mathrm{m/s}$, $\theta=37°$. Find time to land, range, and speed at impact. (sin 37° = 0.60, cos 37° = 0.80)</p>
+<ol class="soln">
+<li>Components: $v_{0x}=20$, $v_{0y}=15\,\mathrm{m/s}$.</li>
+<li>$y(t)=20+15t-4.9t^2=0 \Rightarrow t\approx \mathbf{4.07\,s}$.</li>
+<li>Range $R=v_{0x}\cdot t\approx \mathbf{81.3\,m}$.</li>
+<li>$v_y=15-9.8(4.07)\approx-24.8$; $|\vec v|=\sqrt{20^2+24.8^2}\approx \mathbf{31.9\,m/s}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Graph interpretation</summary>
+<p><strong>Problem.</strong> A car's $v$–$t$ graph is a straight line from $(0,4)$ to $(10,24)$ m/s. Find acceleration and displacement.</p>
+<ol class="soln"><li>$a=\text{slope}=(24-4)/10=\mathbf{2.0\,m/s^2}$.</li>
+<li>$\Delta x=\text{area}=\tfrac12(4+24)(10)=\mathbf{140\,m}$.</li></ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Using $v=v_0+at$ when $a$ is not constant — must integrate $a(t)$.</li>
+<li>Mixing $x$- and $y$-components in projectiles — they're independent.</li>
+<li>Sign errors with $g$; at peak, $v_y=0$ but speed ≠ 0 (still have $v_x$).</li>
+</ol>
+</section>
+
+<!-- UNIT 2 -->
+<section class="unit" id="unit-2" data-title="Force and Translational Dynamics">
+<div class="unit-header"><div class="unit-tag">Mechanics · Unit 2</div><h2>Force &amp; Translational Dynamics</h2>
+<p>Newton's laws, friction, inclined planes, tension, and drag forces — including derivations of terminal velocity via ODEs.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Draw complete free-body diagrams (FBDs).</li>
+<li>Apply Newton's 1st, 2nd, 3rd laws to single and connected bodies.</li>
+<li>Analyze static vs kinetic friction; find impending-motion conditions.</li>
+<li>Solve inclined-plane, Atwood, and pulley problems.</li>
+<li>Set up and solve drag ODEs; derive terminal velocity.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$\sum\vec F=m\vec a=\frac{d\vec p}{dt}$$
+$$f_s\le\mu_s N,\qquad f_k=\mu_k N$$
+$$\text{Incline: } mg\sin\theta\ (\text{along}),\ N=mg\cos\theta\ (\perp)$$
+$$\text{Linear drag: } m\frac{dv}{dt}=mg-bv\ \Rightarrow\ v(t)=\frac{mg}{b}(1-e^{-bt/m}),\ v_{term}=\frac{mg}{b}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Free_body_diagram2.svg/400px-Free_body_diagram2.svg.png" alt="Free body diagram on incline" /><figcaption>Free-body diagram: weight resolves into components $mg\sin\theta$ and $mg\cos\theta$.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Incline + pulley with friction</summary>
+<p>$m_1=4$ kg on 30° incline ($\mu_k=0.20$); $m_2=3$ kg hanging. Find $a$ and $T$.</p>
+<ol class="soln">
+<li>B falls: $m_2g-T=m_2a$. A up slope: $T-m_1g\sin\theta-\mu_k m_1g\cos\theta=m_1a$.</li>
+<li>Sum: $29.4-19.6-6.79=3.01=7a$ → $\mathbf{a=0.43\,m/s^2}$.</li>
+<li>$T=m_2(g-a)=3(9.37)=\mathbf{28.1\,N}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Linear drag, terminal velocity</summary>
+<p>$m=0.05$ kg raindrop, $b=0.02$ kg/s. Find $v(t)$, $v_{term}$, and time to reach 95% of $v_{term}$.</p>
+<ol class="soln">
+<li>Separable ODE → $v(t)=\frac{mg}{b}(1-e^{-bt/m})$.</li>
+<li>$v_{term}=0.05(9.8)/0.02=\mathbf{24.5\,m/s}$.</li>
+<li>$\tau=m/b=2.5\,\mathrm s$; $t=\tau\ln 20=\mathbf{7.49\,s}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Static friction threshold</summary>
+<p>Crate sits on ramp; $\mu_s=0.40$. Max angle before slipping?</p>
+<ol class="soln"><li>$\tan\theta=\mu_s \Rightarrow \theta_{max}=\arctan(0.40)=\mathbf{21.8°}$.</li></ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Assuming $N=mg$ on inclines — it's $mg\cos\theta$.</li>
+<li>Treating static friction as always $\mu_s N$ — it's $\le\mu_s N$ until impending slip.</li>
+<li>Sign errors in drag: drag always opposes velocity.</li>
+</ol>
+</section>
+
+<!-- UNIT 3 -->
+<section class="unit" id="unit-3" data-title="Work Energy Power">
+<div class="unit-header"><div class="unit-tag">Mechanics · Unit 3</div><h2>Work, Energy &amp; Power</h2>
+<p>Line integrals of force, potential-energy functions, equilibria from $U(x)$ graphs, and conservation of mechanical energy with dissipation.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Calculate work from constant and variable forces via line integrals.</li>
+<li>Apply the work–energy theorem $W_{net}=\Delta K$.</li>
+<li>Derive force from potential energy: $F_x=-dU/dx$.</li>
+<li>Identify stable/unstable equilibria on $U(x)$ graphs.</li>
+<li>Apply conservation of mechanical energy, including dissipation.</li>
+<li>Compute instantaneous and average power.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$W=\int\vec F\cdot d\vec r,\ K=\tfrac12 mv^2,\ W_{net}=\Delta K$$
+$$F_x=-\frac{dU}{dx},\ U_{grav}=mgy\text{ or }-\frac{GMm}{r},\ U_{spring}=\tfrac12 kx^2$$
+$$P=\frac{dW}{dt}=\vec F\cdot\vec v,\ K_i+U_i=K_f+U_f+|W_{nc}|$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Potential_energy_well.svg/600px-Potential_energy_well.svg.png" alt="Potential energy well" /><figcaption>Potential-energy curve: local minima are stable equilibria, maxima unstable.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Variable force (line integral)</summary>
+<p>$F(x)=(6x-2x^2)\,\mathrm N$ from $x=0$ to $x=3$ m.</p>
+<ol class="soln">
+<li>$W=\int_0^3(6x-2x^2)dx=[3x^2-\tfrac23 x^3]_0^3=27-18=\mathbf{9\,J}$.</li>
+<li>If $m=2$ kg from rest: $v_f=\sqrt{2W/m}=\mathbf{3\,m/s}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Spring + friction</summary>
+<p>$k=200$ N/m, compressed $x=0.10$ m, $m=0.50$ kg, $\mu_k=0.25$. Distance block travels on rough surface?</p>
+<ol class="soln">
+<li>$\tfrac12 kx^2=\mu_k mg d$ → $1.0=1.225d$ → $\mathbf{d\approx 0.82\,m}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> U(x) equilibria &amp; turning points</summary>
+<p>$U(x)=x^4-8x^2+10\,\mathrm J$, $m=1$ kg, total energy $E=5$ J.</p>
+<ol class="soln">
+<li>$dU/dx=4x(x^2-4)=0 \Rightarrow x=0,\pm 2$.</li>
+<li>$d^2U/dx^2=12x^2-16$: at $x=0$: $-16$ (<strong>unstable</strong>); at $x=\pm 2$: $+32$ (<strong>stable</strong>).</li>
+<li>Turning points: $x^4-8x^2+5=0$ → $x^2=4\pm\sqrt{11}$ → $x\approx\pm 2.72$, $\pm 0.82$ m.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Sign of $F=-dU/dx$ — force points "downhill" on the $U$ curve.</li>
+<li>Friction work uses <em>path length</em>, not displacement.</li>
+<li>Work &amp; power are dot products — normal and centripetal forces do no work.</li>
+</ol>
+</section>
+
+<!-- UNIT 4 -->
+<section class="unit" id="unit-4" data-title="Linear Momentum">
+<div class="unit-header"><div class="unit-tag">Mechanics · Unit 4</div><h2>Linear Momentum</h2>
+<p>Conservation, impulse, and center of mass — in 1D and 2D, for discrete and continuous systems.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Define $\vec p=m\vec v$; relate to Newton II ($\vec F=d\vec p/dt$).</li>
+<li>Use impulse $\vec J=\int\vec F\,dt=\Delta\vec p$ and interpret areas on $F(t)$ graphs.</li>
+<li>Conserve momentum in 1D and 2D collisions (elastic, inelastic).</li>
+<li>Locate center of mass for discrete/continuous distributions.</li>
+<li>Apply $M\vec a_{cm}=\vec F_{ext}$; qualitative rocket/variable mass.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$\vec p=m\vec v,\ \vec F_{net}=\frac{d\vec p}{dt},\ \vec J=\int\vec F\,dt=\Delta\vec p$$
+$$v_f^{inelastic}=\frac{m_1 v_1+m_2 v_2}{m_1+m_2}$$
+$$\vec r_{cm}=\frac{1}{M}\int\vec r\,dm,\ M\vec a_{cm}=\vec F_{ext}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Elastischer_sto%C3%9F_2D.gif/320px-Elastischer_sto%C3%9F_2D.gif" alt="Elastic 2D collision" /><figcaption>Elastic 2D collision of equal masses: final velocities are perpendicular.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> 2D perfectly inelastic collision</summary>
+<p>Car (1500 kg, east @ 20 m/s) + truck (2500 kg, north @ 15 m/s) stick.</p>
+<ol class="soln">
+<li>$p_x=30\,000$, $p_y=37\,500$ kg·m/s. $M=4000$.</li>
+<li>$v_x=7.5$, $v_y=9.375$ m/s. $|v|=\mathbf{12.0\,m/s}$, $\theta=\mathbf{51.3°\ N\ of\ E}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Impulse from F(t)</summary>
+<p>$m=0.20$ kg from rest; $F(t)=50t-10t^2$ N for $0\le t\le 5$ s.</p>
+<ol class="soln">
+<li>$J=\int_0^5(50t-10t^2)dt=625-\tfrac{1250}{3}=\mathbf{208.3\,N\cdot s}$.</li>
+<li>$\Delta v=J/m=\mathbf{1042\,m/s}$ (idealized force profile).</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Center of mass of non-uniform rod</summary>
+<p>$\lambda(x)=\lambda_0(1+x/L)$.</p>
+<ol class="soln">
+<li>$M=\tfrac32\lambda_0 L$; $\int x\,dm=\tfrac56\lambda_0 L^2$.</li>
+<li>$x_{cm}=\mathbf{\tfrac{5}{9}L}$ — past midpoint as expected.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Momentum is a vector — conserve $p_x$ and $p_y$ separately.</li>
+<li>Momentum conserved in all collisions; kinetic energy only in elastic.</li>
+<li>Bouncing ball: $\Delta p=m(v_f-(-v_i))=m(v_f+v_i)$.</li>
+</ol>
+</section>
+
+<!-- UNIT 5 -->
+<section class="unit" id="unit-5" data-title="Torque Rotation">
+<div class="unit-header"><div class="unit-tag">Mechanics · Unit 5</div><h2>Torque &amp; Rotational Dynamics</h2>
+<p>Rigid-body rotation: torque, moment of inertia by integration, rolling without slipping, and static equilibrium.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Apply rotational kinematics; relate linear and angular quantities.</li>
+<li>Compute torque as $\vec\tau=\vec r\times\vec F$.</li>
+<li>Calculate $I$ for continuous bodies via integration; apply parallel-axis theorem.</li>
+<li>Apply $\sum\tau=I\alpha$ and rolling constraint $v=R\omega$.</li>
+<li>Solve static-equilibrium problems (ΣF=0, Στ=0).</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$\vec\tau=\vec r\times\vec F,\ |\tau|=rF\sin\theta$$
+$$\sum\vec\tau=I\vec\alpha,\ I=\int r^2\,dm,\ I=I_{cm}+Md^2$$
+$$v_{cm}=R\omega,\ a_{cm}=R\alpha\ \text{(rolling without slipping)}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Torque_animation.gif/240px-Torque_animation.gif" alt="Torque right-hand rule" /><figcaption>Right-hand rule: $\vec\tau=\vec r\times\vec F$ points perpendicular to the plane of $\vec r$ and $\vec F$.</figcaption></figure>
+
+<h3>Moment-of-Inertia Reference</h3>
+<table class="ref-table">
+<tr><th>Object (axis)</th><th>$I$</th></tr>
+<tr><td>Thin rod about center</td><td>$\tfrac{1}{12}ML^2$</td></tr>
+<tr><td>Thin rod about end</td><td>$\tfrac{1}{3}ML^2$</td></tr>
+<tr><td>Solid disk/cylinder (central axis)</td><td>$\tfrac12 MR^2$</td></tr>
+<tr><td>Thin hoop</td><td>$MR^2$</td></tr>
+<tr><td>Solid sphere</td><td>$\tfrac{2}{5}MR^2$</td></tr>
+<tr><td>Thin spherical shell</td><td>$\tfrac{2}{3}MR^2$</td></tr>
+</table>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Moment of inertia of a rod</summary>
+<p>Uniform rod mass $M$, length $L$, axis through one end.</p>
+<ol class="soln">
+<li>$I=\int_0^L x^2\lambda\,dx=\lambda\cdot\tfrac{L^3}{3}=\mathbf{\tfrac{1}{3}ML^2}$.</li>
+<li>Parallel-axis check: $I=\tfrac{1}{12}ML^2+M(L/2)^2=\tfrac{1}{3}ML^2$. ✓</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Sphere rolling down incline</summary>
+<p>Solid sphere, $I=\tfrac25 MR^2$, angle $\theta$. Find $a$.</p>
+<ol class="soln">
+<li>Translation: $Mg\sin\theta-f=Ma$.</li>
+<li>Torque about CM: $fR=I\alpha=\tfrac25 MR^2(a/R)$ → $f=\tfrac25 Ma$.</li>
+<li>Combine: $\mathbf{a=\tfrac{5}{7}g\sin\theta}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Ladder against a wall</summary>
+<p>Uniform ladder, mass $M$, angle $\theta$ with floor, frictionless wall. Min $\mu_s$ to prevent slipping?</p>
+<ol class="soln">
+<li>$N_f=Mg$; torque about base: $N_w(L\sin\theta)=Mg(L/2)\cos\theta$ → $N_w=Mg/(2\tan\theta)$.</li>
+<li>$f=N_w\le\mu_s Mg$ → $\mathbf{\mu_s\ge 1/(2\tan\theta)}$.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Forgetting $\sin\theta$ in torque / using the wrong lever arm.</li>
+<li>Misapplying parallel-axis (must shift from CM axis).</li>
+<li>Assuming $f=\mu N$ for rolling — static friction is whatever's needed, $\le\mu_s N$.</li>
+</ol>
+</section>
+
+<!-- UNIT 6 -->
+<section class="unit" id="unit-6" data-title="Energy Momentum Rotating Systems">
+<div class="unit-header"><div class="unit-tag">Mechanics · Unit 6</div><h2>Energy &amp; Momentum of Rotating Systems</h2>
+<p>Rotational kinetic energy, angular momentum conservation, orbital mechanics, and Kepler's laws.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Compute rotational kinetic energy (including rolling).</li>
+<li>Apply rotational work–energy theorem.</li>
+<li>Calculate $\vec L$ for particles and rigid bodies; apply $\tau_{ext}=dL/dt$.</li>
+<li>Conserve angular momentum when $\tau_{ext}=0$.</li>
+<li>Analyze orbits; derive Kepler's 3rd law.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$K_{rot}=\tfrac12 I\omega^2,\ K_{roll}=\tfrac12 Mv^2+\tfrac12 I_{cm}\omega^2$$
+$$\vec L=I\vec\omega=\vec r\times\vec p,\ \tau_{ext}=\frac{dL}{dt}$$
+$$v_{orb}=\sqrt{GM/r},\ v_{esc}=\sqrt{2GM/r},\ E_{orbit}=-\frac{GMm}{2a}$$
+$$T^2=\frac{4\pi^2 a^3}{GM}\ \text{(Kepler III)}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Kepler-second-law.gif" alt="Kepler's second law" /><figcaption>Kepler's 2nd law: equal areas in equal times (conservation of angular momentum).</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Sphere rolling from height h</summary>
+<ol class="soln">
+<li>$Mgh=\tfrac12 Mv^2+\tfrac12\tfrac{2}{5}MR^2(v/R)^2=\tfrac{7}{10}Mv^2$.</li>
+<li>$\mathbf{v=\sqrt{10gh/7}}$ — slower than a sliding block because rotation stores KE.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Ball sticks to pivoted rod</summary>
+<p>Rod mass $M$, length $L$, pivoted at one end. Ball mass $m$, speed $v_0$, strikes far end perpendicularly and sticks.</p>
+<ol class="soln">
+<li>$L_i=mv_0 L$; $L_f=(\tfrac13 ML^2+mL^2)\omega$.</li>
+<li>$\mathbf{\omega=\dfrac{mv_0}{L(M/3+m)}}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Kepler's 3rd law derivation</summary>
+<ol class="soln">
+<li>Circular orbit: $\frac{GMm}{r^2}=\frac{mv^2}{r}$ → $v^2=GM/r$.</li>
+<li>$T=2\pi r/v$ → $\mathbf{T^2=\dfrac{4\pi^2 r^3}{GM}}$. Escape: set $E=0$ → $v_{esc}=\sqrt{2GM/r}$.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Treating $v$ and $\omega$ as independent for rolling — must use $\omega=v/R$.</li>
+<li>$L=I\omega$ requires $I$ about the same axis used for $\omega$.</li>
+<li>$E_{orbit}=-GMm/(2a)$, <em>not</em> $-GMm/a$; and $v_{esc}=\sqrt{2}\,v_{circular}$.</li>
+</ol>
+</section>
+
+<!-- UNIT 7 -->
+<section class="unit" id="unit-7" data-title="Oscillations">
+<div class="unit-header"><div class="unit-tag">Mechanics · Unit 7</div><h2>Oscillations</h2>
+<p>Simple harmonic motion: differential equation, spring-mass, pendulums (simple and physical), and energy.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Identify SHM by restoring force $F=-kx$.</li>
+<li>Derive $\omega$, $T$, $f$ for spring-mass and pendulums.</li>
+<li>Represent $x(t)$, $v(t)$, $a(t)$ as sinusoids; relate $A$, $\omega$, $\phi$.</li>
+<li>Apply energy conservation $E=\tfrac12 kA^2$.</li>
+<li>Recognize damped/driven oscillations qualitatively.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$\frac{d^2x}{dt^2}=-\omega^2 x,\ \omega=\sqrt{k/m}$$
+$$x(t)=A\cos(\omega t+\phi),\ v=-A\omega\sin(\omega t+\phi),\ a=-A\omega^2\cos(\omega t+\phi)$$
+$$T_{simple}=2\pi\sqrt{L/g},\ T_{physical}=2\pi\sqrt{I/(mgd)}$$
+$$E=\tfrac12 kA^2=\tfrac12 mv^2+\tfrac12 kx^2$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/74/Simple_harmonic_motion_animation.gif" alt="Simple harmonic motion" /><figcaption>SHM: position (cosine), velocity (sine), acceleration (negative cosine) — phases shifted by π/2.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Derive SHM from Hooke's law</summary>
+<ol class="soln">
+<li>$m\ddot x=-kx$ → $\ddot x=-(k/m)x$. $\omega^2=k/m$.</li>
+<li>General solution: $x(t)=A\cos(\omega t+\phi)$; $T=2\pi\sqrt{m/k}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Physical pendulum (rod pivoted at end)</summary>
+<p>Rod length $L$, mass $M$; $I=\tfrac13 ML^2$, $d=L/2$.</p>
+<ol class="soln">
+<li>$T=2\pi\sqrt{I/(Mgd)}=2\pi\sqrt{\tfrac{ML^2/3}{MgL/2}}=\mathbf{2\pi\sqrt{2L/3g}}$.</li>
+<li>For $L=1$ m: $T\approx\mathbf{1.64\,s}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Speed at x = A/2</summary>
+<ol class="soln">
+<li>$\tfrac12 kA^2=\tfrac12 mv^2+\tfrac12 k(A/2)^2$.</li>
+<li>$v^2=(k/m)(3A^2/4)$ → $\mathbf{v=\tfrac{\sqrt 3}{2}\omega A\approx 0.866\,v_{max}}$.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Using $x$ instead of $A$ in $E=\tfrac12 kA^2$.</li>
+<li>Applying simple-pendulum formula to extended bodies — use physical pendulum.</li>
+<li>Max $|a|$ at turning points, not at equilibrium (where $v$ is max).</li>
+</ol>
+</section>
+
+<!-- UNIT 8 -->
+<section class="unit" id="unit-8" data-title="Charges Fields Gauss">
+<div class="unit-header"><div class="unit-tag">E&amp;M · Unit 8</div><h2>Electric Charges, Fields &amp; Gauss's Law</h2>
+<p>Coulomb's law, electric fields from continuous distributions, flux, and Gauss's law — the cornerstone of electrostatics.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Describe charging (conduction, induction, polarization).</li>
+<li>Apply Coulomb's law and superposition for point charges.</li>
+<li>Compute $\vec E$ for continuous distributions via integration.</li>
+<li>Compute flux and apply Gauss's law with symmetry.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$F=\frac{kq_1 q_2}{r^2},\ \vec E=\vec F/q,\ E_{point}=\frac{kq}{r^2}$$
+$$\Phi_E=\oint\vec E\cdot d\vec A,\ \oint\vec E\cdot d\vec A=\frac{Q_{enc}}{\varepsilon_0}$$
+$$E_{sheet}=\frac{\sigma}{2\varepsilon_0}\ \text{(non-conductor)},\ E_{surface}=\frac{\sigma}{\varepsilon_0}\ \text{(conductor)}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/VFPt_dipole_electric.svg/500px-VFPt_dipole_electric.svg.png" alt="Electric dipole field" /><figcaption>Electric dipole: field lines from + to −, perpendicular to equipotentials.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Uniformly charged insulating sphere</summary>
+<p>Total charge $Q$, radius $R$.</p>
+<ol class="soln">
+<li><strong>Outside</strong> ($r\ge R$): $E(4\pi r^2)=Q/\varepsilon_0$ → $\mathbf{E=kQ/r^2}$.</li>
+<li><strong>Inside</strong> ($r&lt;R$): $Q_{enc}=Q(r^3/R^3)$ → $\mathbf{E=kQr/R^3}$ (linear in $r$).</li>
+<li>Both expressions agree at $r=R$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> E on axis of a charged ring</summary>
+<p>Ring radius $a$, charge $Q$, point at distance $x$ on axis.</p>
+<ol class="soln">
+<li>By symmetry only $x$-component survives; $\cos\theta=x/\sqrt{x^2+a^2}$.</li>
+<li>$\mathbf{E_x=\dfrac{kQx}{(x^2+a^2)^{3/2}}}$. Max at $x=a/\sqrt 2$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Infinite line of charge (Gauss)</summary>
+<p>Linear density $\lambda$. Use a cylindrical Gaussian surface of radius $r$, length $L$.</p>
+<ol class="soln">
+<li>$\Phi=E(2\pi rL)=\lambda L/\varepsilon_0$.</li>
+<li>$\mathbf{E=\dfrac{\lambda}{2\pi\varepsilon_0 r}}$, radial.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Using Gauss on non-symmetric distributions — law always holds but isn't solvable for $E$.</li>
+<li>Confusing $Q_{enc}$ with $Q_{total}$; for insulators use volumetric fraction.</li>
+<li>Missing the $\cos\theta$ factor in continuous integrals.</li>
+</ol>
+</section>
+
+<!-- UNIT 9 -->
+<section class="unit" id="unit-9" data-title="Electric Potential">
+<div class="unit-header"><div class="unit-tag">E&amp;M · Unit 9</div><h2>Electric Potential</h2>
+<p>Potential as scalar energy per charge; relating $V$ and $\vec E$ by gradient or line integral.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Compute $V$ from point charges and continuous distributions.</li>
+<li>Relate $\vec E$ and $V$ via $\vec E=-\nabla V$ and $V=-\int\vec E\cdot d\vec l$.</li>
+<li>Apply $U=qV$ and conservation of energy.</li>
+<li>Compute assembly energy of discrete charge systems.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$V=\frac{kq}{r},\ V=\int\frac{k\,dq}{r}$$
+$$V_B-V_A=-\int_A^B\vec E\cdot d\vec l,\ E_x=-\frac{\partial V}{\partial x}$$
+$$U=qV,\ U_{pair}=\frac{kq_1 q_2}{r},\ U_{assembly}=\sum_{i&lt;j}\frac{kq_i q_j}{r_{ij}}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/VFPt_dipole_electric.svg/512px-VFPt_dipole_electric.svg.png" alt="Dipole equipotentials" /><figcaption>Equipotentials (perpendicular to field lines) for a dipole.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Potential on axis of a ring</summary>
+<p>Every $dq$ is the same distance $r=\sqrt{R^2+x^2}$ from $P$.</p>
+<ol class="soln"><li>$\mathbf{V(x)=\dfrac{kQ}{\sqrt{R^2+x^2}}}$.</li>
+<li>Verify: $E_x=-dV/dx=kQx/(R^2+x^2)^{3/2}$ ✓.</li></ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Finding E from V(x,y,z)</summary>
+<p>$V=3x^2y-2yz^2$.</p>
+<ol class="soln">
+<li>$\vec E=-\nabla V=(-6xy,\ -3x^2+2z^2,\ 4yz)$.</li>
+<li>At $(1,2,1)$: $\vec E=(-12,-1,8)$ V/m; $|\vec E|\approx\mathbf{14.5\,V/m}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Assembly energy of 3 charges</summary>
+<p>$+q$ at each corner of equilateral triangle, side $a$.</p>
+<ol class="soln">
+<li>$U=3\cdot kq^2/a=\mathbf{3kq^2/a}$.</li>
+<li>If one is flipped to $-q$: $U=-kq^2/a$ (bound).</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>$V$ is a scalar — never decompose into components.</li>
+<li>Sign error in $V=-\int\vec E\cdot d\vec l$: moving along $\vec E$ decreases $V$.</li>
+<li>$V=kQ/r$ valid only for spherical symmetry or far-field.</li>
+</ol>
+</section>
+
+<!-- UNIT 10 -->
+<section class="unit" id="unit-10" data-title="Conductors Capacitors">
+<div class="unit-header"><div class="unit-tag">E&amp;M · Unit 10</div><h2>Conductors &amp; Capacitors</h2>
+<p>Conductors in electrostatic equilibrium, capacitor geometries, dielectrics, energy storage, and networks.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Describe conductors in electrostatic equilibrium ($E=0$ inside, $V$ constant).</li>
+<li>Derive $C$ for parallel-plate, spherical, cylindrical capacitors.</li>
+<li>Analyze dielectrics at constant $V$ vs constant $Q$.</li>
+<li>Compute stored energy and energy density.</li>
+<li>Reduce series/parallel capacitor networks.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$C=Q/V,\ C_{pp}=\frac{\varepsilon_0 A}{d},\ C_{sph}=\frac{4\pi\varepsilon_0 ab}{b-a}$$
+$$U=\tfrac12 CV^2=\tfrac12 Q^2/C,\ u=\tfrac12\varepsilon_0 E^2$$
+$$C_{dielectric}=\kappa C_0,\ \text{series: }\tfrac{1}{C_{eq}}=\sum\tfrac{1}{C_i},\ \text{parallel: }C_{eq}=\sum C_i$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Parallel_plate_capacitor.svg/800px-Parallel_plate_capacitor.svg.png" alt="Parallel plate capacitor" /><figcaption>Parallel-plate capacitor: uniform field between plates, fringing at edges.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Spherical capacitor derivation</summary>
+<p>Inner sphere radius $a$ (+Q), outer shell radius $b$ (−Q).</p>
+<ol class="soln">
+<li>Gauss ($a&lt;r&lt;b$): $E=Q/(4\pi\varepsilon_0 r^2)$.</li>
+<li>$V_{ab}=(Q/4\pi\varepsilon_0)(1/a-1/b)$.</li>
+<li>$\mathbf{C=\dfrac{4\pi\varepsilon_0 ab}{b-a}}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> Capacitor network</summary>
+<p>$C_1=2$ μF and $C_2=4$ μF in series; that combo in parallel with $C_3=3$ μF across 12 V.</p>
+<ol class="soln">
+<li>Series: $C_{12}=(2\cdot 4)/(2+4)=4/3$ μF.</li>
+<li>Parallel total: $C_{eq}=13/3$ μF.</li>
+<li>$Q_3=36$ μC; series branch $Q=16$ μC; $V_1=8$ V, $V_2=4$ V.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Dielectric insertion</summary>
+<table class="ref-table">
+<tr><th>Condition</th><th>C</th><th>Q</th><th>V</th><th>U</th></tr>
+<tr><td>Battery on (V const)</td><td>$\kappa C_0$</td><td>$\kappa Q_0$ ↑</td><td>$V_0$</td><td>$\kappa U_0$ ↑</td></tr>
+<tr><td>Battery off (Q const)</td><td>$\kappa C_0$</td><td>$Q_0$</td><td>$V_0/\kappa$ ↓</td><td>$U_0/\kappa$ ↓</td></tr>
+</table>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Series/parallel flipped vs resistors — capacitors in series have smaller $C_{eq}$.</li>
+<li>Constant-V vs constant-Q for dielectrics — opposite energy trends.</li>
+<li>$E=\sigma/\varepsilon_0$ (conductor surface) vs $\sigma/(2\varepsilon_0)$ (isolated sheet).</li>
+</ol>
+</section>
+
+<!-- UNIT 11 -->
+<section class="unit" id="unit-11" data-title="Circuits">
+<div class="unit-header"><div class="unit-tag">E&amp;M · Unit 11</div><h2>Electric Circuits</h2>
+<p>Ohm's law, Kirchhoff's laws, multi-loop analysis, and RC circuits with first-order ODEs.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Define current and drift velocity; apply $R=\rho L/A$.</li>
+<li>Apply Ohm's law and compute power dissipated.</li>
+<li>Apply Kirchhoff's junction and loop rules.</li>
+<li>Reduce resistor networks (series/parallel).</li>
+<li>Solve RC charging/discharging ODEs; interpret $\tau=RC$.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$I=\frac{dQ}{dt},\ V=IR,\ P=IV=I^2R=\frac{V^2}{R}$$
+$$\sum I_{in}=\sum I_{out},\ \sum\Delta V_{loop}=0$$
+$$q_{charge}(t)=Q_f(1-e^{-t/RC}),\ q_{discharge}(t)=Q_0 e^{-t/RC}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Series-RC.svg/320px-Series-RC.svg.png" alt="RC circuit" /><figcaption>Series RC circuit: capacitor charges through resistor with time constant $\tau=RC$.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Two-loop Kirchhoff</summary>
+<p>$\varepsilon_1=12$ V, $\varepsilon_2=6$ V, $R_1=2$, $R_2=4$, $R_3=3$ Ω. Junction $I_1=I_2+I_3$; left loop $12=2I_1+4I_2$; right loop $6=4I_2+3I_3$.</p>
+<ol class="soln">
+<li>Substitute $I_1$: $12=6I_2+2I_3$ → $6=3I_2+I_3$.</li>
+<li>Combine with $6=4I_2+3I_3$: $12=5I_2$ → $\mathbf{I_2=2.4\,A}$.</li>
+<li>$\mathbf{I_3=-1.2\,A}$ (reversed direction), $\mathbf{I_1=1.2\,A}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> RC charging derivation</summary>
+<p>Loop: $\varepsilon-iR-q/C=0$, $i=dq/dt$.</p>
+<ol class="soln">
+<li>Separable ODE: $\dfrac{dq}{C\varepsilon-q}=\dfrac{dt}{RC}$.</li>
+<li>With $q(0)=0$: $\mathbf{q(t)=C\varepsilon(1-e^{-t/RC})}$, $i(t)=(\varepsilon/R)e^{-t/RC}$.</li>
+<li>At $t=\tau$: $q=0.632\,C\varepsilon$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> RC discharging</summary>
+<p>$Q_0=10$ μC, $R=1000$ Ω, $C=2$ μF.</p>
+<ol class="soln">
+<li>$q=Q_0/2$ at $t=RC\ln 2=(2\,\mathrm{ms})(0.693)\approx \mathbf{1.39\,ms}$.</li>
+<li>Total dissipated: $U=Q_0^2/(2C)=\mathbf{25\,\mu J}$.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Sign errors in Kirchhoff loops — pick a direction and stick with it.</li>
+<li>Capacitor at $t=0^+$ acts like a wire; at steady state, an open.</li>
+<li>$\tau=RC$ uses the Thévenin-equivalent $R$ seen by the capacitor.</li>
+</ol>
+</section>
+
+<!-- UNIT 12 -->
+<section class="unit" id="unit-12" data-title="Magnetic Fields">
+<div class="unit-header"><div class="unit-tag">E&amp;M · Unit 12</div><h2>Magnetic Fields &amp; Electromagnetism</h2>
+<p>Lorentz force, circular/helical motion, Biot–Savart law, and Ampère's law.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Compute $\vec F=q\vec v\times\vec B$ and force on current-carrying wires.</li>
+<li>Analyze circular and helical motion in uniform $\vec B$.</li>
+<li>Apply Biot–Savart law to finite wires, arcs, loops.</li>
+<li>Apply Ampère's law to symmetric geometries (wire, coaxial, solenoid, toroid).</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$\vec F=q\vec v\times\vec B,\ \vec F=I\vec L\times\vec B$$
+$$r=\frac{mv}{qB},\ T=\frac{2\pi m}{qB}$$
+$$d\vec B=\frac{\mu_0}{4\pi}\frac{I\,d\vec l\times\hat r}{r^2},\ B_{wire}=\frac{\mu_0 I}{2\pi r}$$
+$$\oint\vec B\cdot d\vec l=\mu_0 I_{enc},\ B_{solenoid}=\mu_0 n I$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Manoderecha.svg/480px-Manoderecha.svg.png" alt="Right-hand rule" /><figcaption>Right-hand rule: thumb along $\vec I$, fingers curl in the direction of $\vec B$.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Coaxial cable (Ampère)</summary>
+<p>Inner solid wire radius $a$ carries $I_0$; outer shell (radius $b$) carries $-I_0$.</p>
+<ol class="soln">
+<li>$r&lt;a$: $B=\mu_0 I_0 r/(2\pi a^2)$.</li>
+<li>$a&lt;r&lt;b$: $B=\mu_0 I_0/(2\pi r)$.</li>
+<li>$r&gt;b$: $B=0$ (self-shielding).</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> B at center of circular arc</summary>
+<p>Arc radius $R$, angle $\theta$, current $I$.</p>
+<ol class="soln">
+<li>$dB=(\mu_0 I\,dL)/(4\pi R^2)$; $L=R\theta$.</li>
+<li>$\mathbf{B=\dfrac{\mu_0 I\theta}{4\pi R}}$. Full loop ($\theta=2\pi$) gives $\mu_0 I/(2R)$ ✓.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Helical motion</summary>
+<p>Proton in $\vec B=0.5\,\hat z$ T with $\vec v=(3,0,4)\times 10^6$ m/s.</p>
+<ol class="soln">
+<li>Only $v_\perp=3\times 10^6$ contributes to circular motion.</li>
+<li>$r=mv_\perp/(qB)\approx\mathbf{6.3\,cm}$.</li>
+<li>$T=2\pi m/(qB)\approx\mathbf{1.31\times 10^{-7}\,s}$; pitch $=v_\| T\approx\mathbf{0.52\,m}$.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Dropping the $\sin\theta$ in cross product; reverse RHR for negative charges.</li>
+<li>Ampère only works with symmetry (use Biot–Savart for finite shapes).</li>
+<li>$T$ is speed-independent; pitch uses $v_\|$, radius uses $v_\perp$.</li>
+</ol>
+</section>
+
+<!-- UNIT 13 -->
+<section class="unit" id="unit-13" data-title="Electromagnetic Induction">
+<div class="unit-header"><div class="unit-tag">E&amp;M · Unit 13</div><h2>Electromagnetic Induction</h2>
+<p>Faraday's law, Lenz's law, motional EMF, inductance, LR circuits, and LC oscillations.</p></div>
+
+<h3>Learning Objectives</h3>
+<ul class="objectives">
+<li>Compute flux $\Phi_B=\int\vec B\cdot d\vec A$.</li>
+<li>Apply Faraday's and Lenz's laws.</li>
+<li>Analyze motional EMF $\varepsilon=BLv$.</li>
+<li>Apply $\varepsilon=-L\,dI/dt$, $U=\tfrac12 LI^2$, $u=B^2/(2\mu_0)$.</li>
+<li>Solve LR circuit ODEs; recognize LC oscillation.</li>
+</ul>
+
+<h3>Key Equations</h3>
+<div class="eq-block">
+$$\Phi_B=\int\vec B\cdot d\vec A,\ \varepsilon=-\frac{d\Phi_B}{dt},\ \varepsilon_{motional}=BLv$$
+$$\varepsilon_L=-L\frac{dI}{dt},\ U=\tfrac12 LI^2,\ u=\frac{B^2}{2\mu_0}$$
+$$I_{growth}(t)=\frac{\varepsilon}{R}(1-e^{-t/\tau}),\ \tau=L/R,\ \omega_{LC}=\frac{1}{\sqrt{LC}}$$
+</div>
+
+<h3>Diagram</h3>
+<figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Faradays_experiment.svg/640px-Faradays_experiment.svg.png" alt="Faraday's experiment" /><figcaption>Faraday's induction: a changing magnetic flux induces an EMF in a nearby loop.</figcaption></figure>
+
+<h3>Worked Examples</h3>
+
+<details class="example" open><summary><span class="pill">Example 1</span> Sliding rod on rails</summary>
+<p>$L=0.50$ m, $v=4.0$ m/s, $B=0.20$ T (into page), $R=2.0$ Ω.</p>
+<ol class="soln">
+<li>$\varepsilon=BLv=\mathbf{0.40\,V}$; $I=\varepsilon/R=\mathbf{0.20\,A}$.</li>
+<li>$F_{mag}=BIL=\mathbf{0.020\,N}$ (opposes motion).</li>
+<li>$P=I^2R=\mathbf{0.080\,W}=Fv$ ✓ (energy conserved).</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 2</span> LR circuit</summary>
+<p>$\varepsilon_0=12$ V, $R=6$ Ω, $L=3$ H; switch closed at $t=0$.</p>
+<ol class="soln">
+<li>$\tau=L/R=0.5$ s.</li>
+<li>$I(t)=2(1-e^{-2t})$ A; $I_\infty=2$ A.</li>
+<li>$U_{steady}=\tfrac12 LI^2=\mathbf{6.0\,J}$.</li>
+</ol>
+</details>
+
+<details class="example"><summary><span class="pill">Example 3</span> Loop entering a field</summary>
+<p>Square side $a=0.10$ m, $B=0.30$ T, $v=2.0$ m/s, $R=0.50$ Ω.</p>
+<ol class="soln">
+<li>While entering: $\varepsilon=Bav=\mathbf{0.060\,V}$, $I=\mathbf{0.12\,A}$.</li>
+<li>Once fully inside: $d\Phi/dt=0$, $I=0$.</li>
+</ol>
+</details>
+
+<h3>Common Pitfalls</h3>
+<ol class="pitfalls">
+<li>Lenz's law: induced current opposes the <em>change</em> in flux, not flux itself.</li>
+<li>Inductor at $t=0^+$: open circuit ($I=0$). At steady state: a plain wire.</li>
+<li>$\Phi_B$ needs consistent $d\vec A$ orientation — sets sign of $\varepsilon$.</li>
+</ol>
+</section>
+
+<!-- STUDY TIPS -->
+<section class="unit" id="study-tips" data-title="Study Tips">
+<div class="unit-header"><div class="unit-tag">Strategy</div><h2>General Study Tips</h2>
+<p>How to prepare efficiently for both AP Physics C exams.</p></div>
+<ol class="tips">
+<li><strong>Master calculus first.</strong> AP Physics C assumes fluent differentiation and integration. Nearly every unit has problems solvable <em>only</em> with calculus.</li>
+<li><strong>Draw before solving.</strong> Free-body diagrams (Mechanics) and field-line/Gaussian-surface sketches (E&amp;M) catch sign errors before algebra does.</li>
+<li><strong>Parallel concepts across units.</strong> Rotational ↔ translational (5/6); Gauss ↔ Ampère (8/12); RC ↔ LR (11/13); SHM ↔ LC oscillation (7/13).</li>
+<li><strong>Know the symmetry criterion.</strong> Gauss's and Ampère's laws are always true but only <em>solvable</em> when symmetry makes the field constant on the surface/loop.</li>
+<li><strong>Practice old FRQs.</strong> CollegeBoard's <a href="https://apcentral.collegeboard.org/courses/ap-physics-c-mechanics/exam/past-exam-questions" target="_blank" rel="noopener">past-exam archive</a> is the single best resource.</li>
+<li><strong>Units and sig figs.</strong> AP graders are lenient on sig figs but strict on units — always check them.</li>
+</ol>
+<h3>What's NOT on the exam</h3>
+<p>Magnetic materials, AC circuits, displacement current, relativistic corrections, and quantum effects are <em>not</em> tested on AP Physics C. Focus energy on what's in the CED.</p>
+<h3>Official references</h3>
+<ul>
+<li><a href="https://apcentral.collegeboard.org/media/pdf/ap-physics-c-mechanics-course-and-exam-description.pdf" target="_blank" rel="noopener">Mechanics CED (PDF)</a></li>
+<li><a href="https://apcentral.collegeboard.org/media/pdf/ap-physics-c-electricity-and-magnetism-course-and-exam-description.pdf" target="_blank" rel="noopener">E&amp;M CED (PDF)</a></li>
+<li><a href="https://apcentral.collegeboard.org/media/pdf/ap-physics-c-mechanics-course-and-exam-description-clarifications.pdf" target="_blank" rel="noopener">2026 Clarifications (Mechanics)</a></li>
+</ul>
+</section>
+
+<footer class="site-footer">
+  <div>AP Physics C Study Guide · Aligned to CollegeBoard CED (May 2026 exam) · Content derived from public educational sources.</div>
+  <div>Diagrams: Wikimedia Commons. Math rendering: MathJax.</div>
+</footer>
+
+</main>
+
+<button id="toTop" title="Back to top" aria-label="Back to top">↑</button>
+</div>
+
+<div id="noresults" class="no-results" hidden>No matches found. Try a different search term.</div>
+
+<script src="script.js"></script>
+</body>
+</html>
